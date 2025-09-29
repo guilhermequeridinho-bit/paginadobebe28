@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+    <title>BebêZen - Quiz Sono Infantil</title>
+    <meta name="description" content="Descubra em 2 minutos como seu bebê pode aprender a dormir sem ser mamando. Teste personalizado para mães.">
+    <meta property="og:title" content="BebêZen - Quiz Sono Infantil">
+    <meta property="og:description" content="Descubra em 2 minutos como seu bebê pode aprender a dormir sem ser mamando">
+    <meta property="og:type" content="website">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Fira+Code:wght@300..700&family=Geist+Mono:wght@100..900&family=Geist:wght@100..900&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Lora:ital,wght@0,400..700;1,400..700&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Outfit:wght@100..900&family=Oxanium:wght@200..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&family=Space+Grotesk:wght@300..700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    
+    <!-- Preload baby cartoon images for smooth loading -->
+    <link rel="preload" href="/src/assets/Bebê cartoon 0-3 meses (1)_1759059426061.png" as="image" type="image/png">
+    <link rel="preload" href="/src/assets/Bebê cartoon 4-6 meses (1)_1759059429580.png" as="image" type="image/png">
+    <link rel="preload" href="/src/assets/Bebê cartoon 7-12 meses (1)_1759059434432.png" as="image" type="image/png">
+    <link rel="preload" href="/src/assets/Bebê cartoon mais de 1 ano (1)_1759059437056.png" as="image" type="image/png">
+    
+    <!-- Enhanced Error Handler for External Scripts - Must be loaded BEFORE tracking scripts -->
+    <script>
+      // Handle unhandled promise rejections from external scripts (UTMify, Meta, Clarity)
+      window.addEventListener('unhandledrejection', function(event) {
+        // Check if error is from external tracking scripts or timeout errors
+        const reason = event.reason;
+        const isExternalScript = reason && reason.stack && 
+          (reason.stack.includes('utmify.com') || 
+           reason.stack.includes('facebook.net') ||
+           reason.stack.includes('clarity.ms') ||
+           reason.stack.includes('pixel.js') ||
+           reason.stack.includes('fbevents.js'));
+           
+        const isTimeoutError = reason && 
+          (reason.message === 'signal timed out' || 
+           reason.name === 'TimeoutError' ||
+           (reason.message && reason.message.includes('timeout')) ||
+           (reason.message && reason.message.includes('Failed to fetch')));
+        
+        if (isExternalScript || isTimeoutError) {
+          // Prevent the error from showing in console/overlay
+          event.preventDefault();
+          // Log for debugging but don't clutter production
+          if (typeof window !== 'undefined' && window.location.hostname.includes('replit')) {
+            console.debug('External script error handled:', reason?.message || 'Unknown error');
+          }
+        }
+      });
+      
+      // Handle general errors from external scripts
+      window.addEventListener('error', function(event) {
+        const isExternalScript = event.filename && 
+          (event.filename.includes('utmify.com') || 
+           event.filename.includes('facebook.net') ||
+           event.filename.includes('clarity.ms') ||
+           event.filename.includes('fbevents.js'));
+           
+        if (isExternalScript) {
+          // Prevent error propagation
+          event.preventDefault();
+          // Log for debugging but don't clutter production
+          if (typeof window !== 'undefined' && window.location.hostname.includes('replit')) {
+            console.debug('External script error handled:', event.message);
+          }
+        }
+      });
+    </script>
+
+    <!-- Tracking Scripts - Only load in production to avoid timeout errors in development -->
+    <script>
+      // Check if we're in production (not localhost or replit dev environment)
+      const isProduction = !window.location.hostname.includes('localhost') && 
+                          !window.location.hostname.includes('replit') &&
+                          !window.location.hostname.includes('127.0.0.1');
+      
+      if (isProduction) {
+        // UTMify Script
+        const utmifyScript = document.createElement('script');
+        utmifyScript.src = 'https://cdn.utmify.com.br/scripts/utms/latest.js';
+        utmifyScript.setAttribute('data-utmify-prevent-xcod-sck', '');
+        utmifyScript.setAttribute('data-utmify-prevent-subids', '');
+        utmifyScript.async = true;
+        utmifyScript.defer = true;
+        document.head.appendChild(utmifyScript);
+
+        // UTMify Pixel Script
+        window.pixelId = "68d09d65737b935c9a7bb4b8";
+        const pixelScript = document.createElement("script");
+        pixelScript.setAttribute("async", "");
+        pixelScript.setAttribute("defer", "");
+        pixelScript.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+        document.head.appendChild(pixelScript);
+
+        // Meta Pixel Code
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '1297402921863399');
+        fbq('track', 'PageView');
+
+        // Microsoft Clarity Code  
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "teif01hiss");
+      } else {
+        // Development mode - mock tracking functions to prevent errors
+        console.log('Development mode: Tracking scripts disabled');
+        window.fbq = function() { console.log('fbq called:', arguments); };
+        window.clarity = function() { console.log('clarity called:', arguments); };
+      }
+    </script>
+    <script type="module" crossorigin src="/assets/index-IYqtkJEu.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-BhRJpaAB.css">
+  </head>
+  <body class="bg-gradient-to-br from-pink-50 to-rose-100">
+    <!-- Meta Pixel Noscript -->
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1297402921863399&ev=PageView&noscript=1"
+    /></noscript>
+    <div id="root"></div>
+    <!-- This is a replit script which adds a banner on the top of the page when opened in development mode outside the replit environment -->
+    <script type="text/javascript" src="https://replit.com/public/js/replit-dev-banner.js"></script>
+  </body>
+</html>
